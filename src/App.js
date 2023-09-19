@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 
 import NoteContainer from "./Components/NoteContainer/NoteContainer";
 import Sidebar from "./Components/Sidebar/Sidebar";
-
 import "./App.css";
 
 function App() {
@@ -21,6 +20,7 @@ function App() {
     });
     setNotes(tempNotes);
   };
+  
 
   const deleteNote = (id) => {
     const tempNotes = [...notes];
@@ -46,8 +46,13 @@ function App() {
     localStorage.setItem("notes-app", JSON.stringify(notes));
   }, [notes]);
 
+	
+
+
+
   return (
     <div className="App">
+     
       <Sidebar addNote={addNote} />
       <NoteContainer
         notes={notes}
